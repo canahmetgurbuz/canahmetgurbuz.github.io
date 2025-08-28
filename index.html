@@ -1,0 +1,149 @@
+<!doctype html>
+<!--
+  Can Ahmet Gürbüz - Basit Kişisel Web Sitesi
+  Tek dosya: HTML + CSS
+  Kaydet: can-ahmet-website.html
+  Açmak için: dosyayı tarayıcıda (Chrome/Edge/Firefox) çift tıklayın veya sürükleyin.
+-->
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Can Ahmet Gürbüz — Kişisel Sayfa</title>
+  <style>
+    /* --- Temel sıfırlama --- */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      line-height:1.4;
+      color:#1f2937;
+      background:linear-gradient(180deg,#f7fbff 0%,#f3f7fa 60%);
+      padding:24px;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    /* --- Kutu düzeni --- */
+    .card{
+      width:100%;
+      max-width:920px;
+      background:white;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(18,38,63,0.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 340px 1fr;
+    }
+
+    /* Yan panel */
+    .sidebar{
+      padding:28px 22px;
+      background:linear-gradient(180deg,#0ea5a3 0%,#06b6d4 100%);
+      color:white;
+      display:flex;flex-direction:column;gap:18px;
+      align-items:flex-start;
+    }
+    .avatar{
+      width:100%;height:160px;border-radius:12px;background:rgba(255,255,255,0.12);
+      display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:700;color:rgba(255,255,255,0.9)
+    }
+    .name{font-size:20px;font-weight:700}
+    .subtitle{font-size:13px;opacity:0.95}
+    .meta{font-size:13px;background:rgba(255,255,255,0.06);padding:10px;border-radius:10px;width:100%}
+
+    /* İçerik */
+    .content{padding:28px 32px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    h1{font-size:22px;margin-bottom:6px}
+    p.lead{color:#374151}
+
+    .section{margin-top:20px}
+    .cards{display:flex;flex-wrap:wrap;gap:14px}
+    .info-card{flex:1 1 220px;background:#fbfdff;border-radius:10px;padding:12px;border:1px solid #eef3f8}
+    .info-card h3{font-size:15px;margin-bottom:6px}
+    .info-card p{font-size:13px;color:#4b5563}
+
+    /* Footer / küçük not */
+    .small{font-size:12px;color:#6b7280}
+
+    /* Basit buton */
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:#0b7285;color:white;text-decoration:none;font-weight:600}
+
+    /* Responsive */
+    @media (max-width:820px){
+      .card{grid-template-columns:1fr;}
+      .avatar{height:120px}
+    }
+
+    /* İnce animasyon */
+    .fade-up{transform:translateY(8px);opacity:0;animation:fadeUp 600ms ease forwards}
+    @keyframes fadeUp{to{transform:none;opacity:1}}
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="headline">
+    <aside class="sidebar">
+      <div class="avatar">CA</div>
+      <div class="name">Can Ahmet Gürbüz</div>
+      <div class="subtitle">1. sınıf — Kırşehir Ahi Evran Üniversitesi</div>
+
+      <div class="meta">
+        <strong>Hobiler</strong>
+        <p style="margin-top:8px;font-size:13px;">Futbol oynamak, müzik dinlemek</p>
+      </div>
+
+      <div style="margin-top:auto;width:100%">
+        <a class="btn" href="#contact">İletişim</a>
+      </div>
+    </aside>
+
+    <section class="content">
+      <header>
+        <div>
+          <h1 id="headline">Merhaba — ben Can Ahmet</h1>
+          <p class="lead">Kırşehir Ahi Evran Üniversitesi'nde 1. sınıf öğrencisiyim. Aşağıda benimle ilgili kısa bilgiler ve hobilerimi bulabilirsin.</p>
+        </div>
+        <div class="small">Basit HTML &amp; CSS ile hazırlanmış kişisel sayfa</div>
+      </header>
+
+      <div class="section fade-up" style="animation-delay:80ms">
+        <h2 style="font-size:16px;margin-bottom:10px">Hakkımda</h2>
+        <p>Üniversitede ilk yıllarımdayım ve öğrenmeye aç biriyim. Dersler, arkadaşlıklar ve kampüs hayatı şu sıralar gündemimde. Futbol ve müzik günlük enerjimi sağlayan iki büyük ilgi alanım.</p>
+      </div>
+
+      <div class="section fade-up" style="animation-delay:160ms">
+        <h2 style="font-size:16px;margin-bottom:10px">Hobiler</h2>
+        <div class="cards">
+          <article class="info-card">
+            <h3>Futbol</h3>
+            <p>Haftada birkaç kez arkadaşlarla maç yaparım. Pozisyon tercihim varsa kolayca değiştirebilirim — takım oyunu severim.</p>
+          </article>
+
+          <article class="info-card">
+            <h3>Müzik</h3>
+            <p>Genelde rahatlatıcı ve ritmik türleri tercih ederim. Dinlediğim müzik ders çalışırken veya dinlenirken bana eşlik eder.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="section fade-up" style="animation-delay:240ms">
+        <h2 style="font-size:16px;margin-bottom:10px">Eğitim</h2>
+        <div class="cards">
+          <article class="info-card">
+            <h3>Kırşehir Ahi Evran Üniversitesi</h3>
+            <p>1. sınıf öğrencisiyim. Kampüs yaşamı ve bölüm faaliyetlerine katılmayı seviyorum.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="section fade-up" id="contact" style="animation-delay:320ms">
+        <h2 style="font-size:16px;margin-bottom:10px">İletişim</h2>
+        <p class="small">Buraya e-posta veya sosyal medya linklerini ekleyebilirsin. Şimdilik örnek alan:</p>
+        <p style="margin-top:8px"><strong>E-posta:</strong> can.ahmet@example.com</p>
+      </div>
+
+      <div style="margin-top:22px" class="small">İstersen renk, yazı tipi veya içerik değişiklikleri yapabilirim — söylemen yeterli.</div>
+    </section>
+  </main>
+</body>
+</html>
